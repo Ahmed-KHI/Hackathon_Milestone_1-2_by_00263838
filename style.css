@@ -1,0 +1,303 @@
+/* General Styling */
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(to right, #e4a597, #f3e3b2, #87b0dc);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.resume {
+  background-color: #e6e6e6; 
+  padding: 40px;
+  width: 100%;
+  max-width: 800px;
+  border-radius: 15px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  animation: slide-in 1s ease-out, glow 2s infinite alternate;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Switch container styling */
+.switch-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  font-size: 16px;
+  font-weight: bold;
+  color: #444;
+  z-index: 1000;
+  transition: transform 0.4s ease-in-out, opacity 0.3s;
+  cursor: pointer;
+}
+
+/* Label Text Styling */
+.switch-container b {
+  margin-left: 10px;
+  color: #ff5733; 
+}
+
+/* The switch - the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+/* Hide the default checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+/* The round slider */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* When checked, change the background color */
+input:checked + .slider {
+  background-color: #4CAF50;
+}
+
+/* Move the slider when checked */
+input:checked + .slider:before {
+  transform: translateX(30px);
+}
+
+/* Animation for hover effect */
+.switch:hover .slider {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Make the switch button bounce when toggled */
+.switch input:checked + .slider:before {
+  animation: bounce 0.5s ease;
+}
+
+/* Headings Styling */
+h1, h2 {
+  color: #444; 
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  animation: fadeInTitle 1.5s ease-in-out;
+  color: #ff5733; 
+}
+
+h2 {
+  color: #0056b3; 
+}
+
+/* Text and List Styling */
+p, li {
+  color: #555;
+  animation: fadeInText 1.8s ease-in-out;
+}
+
+ul {
+  list-style-type: square;
+  padding-left: 20px;
+}
+
+/* Profile Picture Styling */
+img.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  border: 4px solid #ffcc33; 
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+  animation: pulse 2s infinite alternate;
+}
+
+img.profile-pic:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(255, 204, 51, 0.8);
+}
+
+.profile-pic-container {
+  text-align: center;
+}
+
+/* Section Styling */
+.section {
+  margin-bottom: 40px;
+  position: relative;
+  animation: slideInSection 1.2s ease-in-out;
+}
+
+/* Button Styling */
+.btn {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .switch-container {
+      top: 130px;
+      right: 0;
+      font-size: 14px;
+  }
+
+  .switch {
+      width: 50px;
+      height: 25px;
+  }
+
+  .slider:before {
+      height: 20px;
+      width: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  h1 {
+      font-size: 2rem;
+  }
+
+  .resume {
+      padding: 20px;
+  }
+
+  img.profile-pic {
+      width: 120px;
+      height: 120px;
+  }
+
+  .btn {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+  }
+
+  .switch-container {
+      margin-bottom: 20px;
+  }
+}
+
+/* Animations */
+@keyframes slide-in {
+  from {
+      opacity: 0;
+      transform: translateY(-30px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  from {
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  }
+  to {
+      box-shadow: 0 0 40px rgba(255, 204, 51, 0.7);
+  }
+}
+
+@keyframes fadeInTitle {
+  0% {
+      opacity: 0;
+      transform: translateX(-50px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+@keyframes fadeInText {
+  0% {
+      opacity: 0;
+      transform: translateY(10px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+      transform: scale(1);
+      box-shadow: 0 0 10px rgba(255, 204, 51, 0.6);
+  }
+  100% {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(255, 204, 51, 0.8);
+  }
+}
+
+@keyframes slideInSection {
+  from {
+      opacity: 0;
+      transform: translateX(-50px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+@keyframes lineGradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  100% {
+      background-position: 100% 50%;
+  }
+}
